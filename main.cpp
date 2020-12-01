@@ -19,4 +19,8 @@ int main()
 
     TimeSpan cpuUserTime{diagnosticInfo.CpuUsage().GetReport().UserTime()};
     std::wcout << "The CPU user time was:   " << cpuUserTime.count() << "\n";
+
+    std::wcout << "The available memory in bytes was: " << diagnosticInfo.MemoryUsage().GetReport().AvailableSizeInBytes() << "\n";
+    std::wcout << "The used memory in bytes was:      " << diagnosticInfo.MemoryUsage().GetReport().CommittedSizeInBytes() << "\n";
+    std::wcout << "The total memory in the system is: " << diagnosticInfo.MemoryUsage().GetReport().TotalPhysicalSizeInBytes() << "\n";
 }
